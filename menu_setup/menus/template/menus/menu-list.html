@@ -1,0 +1,27 @@
+{% extends 'menus/base.html' %}
+
+{% block content %}
+  <h1>Menus</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for menu in menus %}
+        <tr>
+          <td>{{ menu.name }}</td>
+          <td>{{ menu.description }}</td>
+          <td>{{ menu.price }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No menus found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
