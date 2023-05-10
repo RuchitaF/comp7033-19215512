@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly Menu</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container-image">
+    <h1>Weekly Menu</h1>
+    <ul>
+        {% for day, items in menu.items %}
+            <li><a href="{% url 'menu:daily_menu' %}?day={{ day }}">{{ day }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+<style>
+	.btn-link{
+		padding-left: 35em;
+		padding-top: 2em;
+		margin-bottom: 1em;
+		}
+	.container-image{
+		background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-tea-restaurant-menu-background-material-image_159445.jpg");
+		
+	}
+</style>
+</html>
