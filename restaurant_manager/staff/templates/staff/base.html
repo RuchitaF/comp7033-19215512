@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Restaurant Manager{% endblock %}</title>
+	{% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+	<div class="container-image">
+		<div class="btn-link">
+		<h1>Restaurant Manager</h1>
+		{% comment %} <ul>
+			<li><a "btn btn-primary" href="{% url 'staff:staff-list' %}">Staff list</a></li>
+			<li><a "btn btn-primary" href="{% url 'staff:staff_create' %}">Add staff</a></li>
+
+		</ul> {% endcomment %}
+	</div>
+	<hr>
+	<div>
+		{% block content %}{% endblock %}
+	</div>
+</div>
+	{% block scripts %}{% endblock %}
+	<hr>
+	<footer>
+		{% if object and object.pk %}
+			<a href="{% url 'staff:staff_update' pk=object.pk %}">Edit</a>
+			<form method="POST" action="{% url 'staff:staff_delete' pk=object.pk %}" style="display: inline-block;">
+				{% csrf_token %}
+				<input type="submit" value="Delete">
+			</form>
+		{% endif %}
+	</footer>
+	<style>
+		.btn-link{
+			padding-left: 35em;
+			padding-top: 2em;
+			margin-bottom: 1em;
+			}
+		.container-image{
+			background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-tea-restaurant-menu-background-material-image_159445.jpg");
+			
+		}
+	</style>
+</body>
+</html>

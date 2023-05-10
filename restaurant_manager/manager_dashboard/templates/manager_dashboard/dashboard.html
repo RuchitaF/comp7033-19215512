@@ -1,0 +1,39 @@
+{% extends 'manager_dashboard/base.html' %}
+
+{% block content %}
+  <h1>Welcome to the Restaurant Manager Dashboard!</h1>
+  <p>This dashboard allows you to manage your restaurant's staff.</p>
+  
+
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+      
+          <!-- Nav tabs -->
+          
+         
+             <!--<a class="nav-link active" data-toggle="tab" href="#home"> Restaurant Details<br></a>
+            
+           <a class="nav-link active" data-toggle="tab" href="#menu1">Update Restaurant Details</a>-->
+            <br>
+            <a href="{% url 'staff:staff_list' %}">Link Staff Accounts</a>
+         
+          </ul>
+      
+          <!-- Tab panes -->
+          <!-- <div class="tab-content">
+          <div class="tab-pane container active" id="home">A "Hello, World!" program generally is a computer program that outputs or displays the message "Hello, World!". Such a program is very simple in most programming languages, and is often used to illustrate the basic syntax of a programming language. It is often the first program written by people learning to code.</div>
+          <div class="tab-pane container fade" id="menu1">The Manchester Baby, also known as the Small-Scale Experimental Machine, was the world's first electronic stored-program computer. It was built at the University of Manchester, UK, by Frederic C. Williams, Tom Kilburn, and Geoff Tootill, and ran its first program on 21 June 1948, seventy-one years ago</div>
+          <div class="tab-pane container fade" id="menu2">...</div>
+          </div> -->
+        </div>
+      </body>
+
+      {% endblock %}
